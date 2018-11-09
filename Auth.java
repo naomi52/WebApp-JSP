@@ -10,10 +10,11 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class Auth
  */
-@WebServlet("/Auth")
+@WebServlet("/Auth.do")
 public class Auth extends HttpServlet {
     private static final long serialVersionUID = 1L;
-       
+    //String back = "http://localhost:4413/ProjD/Admin.do";
+    String logged = "hi";
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -33,16 +34,21 @@ public class Auth extends HttpServlet {
             String psw = request.getParameter("psw");
              
             //System.out.println(usr + " " + psw);
-             
+            //response.sendRedirect("https://www.eecs.yorku.ca/~roumani/servers/auth/oauth.cgi?"+"back=" +back );
+            
+            
+            
+            
+            
             if(usr!=null && usr.equals("admin") && psw.equals("potato")) {
                 // do stuff
                 request.setAttribute("result", "Authenticated");
                  
-                String redirectLocation = "/Admin.do";
+                String redirectLocation = "Admin.do";
                 //String backLink = "?back=" + request.getRequestURL().toString();
-                String location = redirectLocation;// + backLink;
+                //String location = redirectLocation;// + backLink;
  
-                response.sendRedirect(location);
+                response.sendRedirect(redirectLocation);
             }
             else {
                 request.setAttribute("error", "You are not an admin, what are you doing here?");

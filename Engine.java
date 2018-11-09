@@ -2,6 +2,7 @@ package model;
 
 import java.math.BigInteger;
 import java.net.URL;
+import java.util.List;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -180,6 +181,10 @@ public class Engine
        
             return result;
     }
+	
+	public List<StudentBean> doSis(String name, String gpa, String sortBy) throws Exception{
+		return myDAO.retrieve(name, gpa, sortBy);
+	}
 	
 	/*private static String getValue(String tag, Element element) {
 		NodeList nodes = element.getElementsByTagName(tag).item(0).getChildNodes();

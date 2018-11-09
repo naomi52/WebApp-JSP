@@ -33,7 +33,7 @@ public class Sis extends HttpServlet {
 			
 			try
 			{
-				request.setAttribute("result", engine.myDAO.retrieve(prefix, gpa, orderVal));
+				request.setAttribute("result", engine.doSis(prefix, gpa, orderVal));
 				//request.setAttribute("result",  "$" + engine.doRide(prefix, gpa));
 				//System.out.println(request.getAttribute("result"));
 			} 

@@ -63,13 +63,20 @@ public class Monitor implements ServletRequestAttributeListener {
     }
     
     public static int getDroneUsage() {
-        
+    	
         return droneUsed;
     }
     
     public static String percentDrone() {
         double perc = 100 * (double)droneUsed / (double)totalUsage;
-        return String.format("%.1f", perc) + "%"; 
+        //System.out.println(Double.toString(perc));
+        if(Double.toString(perc) == "NaN") {
+        	return ("0%");
+        }
+        else {
+        	return String.format("%.1f", perc) + "%"; 
+        }
+        
     }
     
     
@@ -86,8 +93,14 @@ public class Monitor implements ServletRequestAttributeListener {
         double pS4 = (double)rideUsed / (double)totalUsage;
          
         double p = pS3 * pS4;
-         
-        return String.format("%.1f", p) + "% chance.";
+        
+        if(Double.toString(p) == "NaN") {
+        	return ("0% chance");
+        }
+        else {
+        	return String.format("%.1f", p) + "% chance.";
+        }
+        
          
     } 
 	

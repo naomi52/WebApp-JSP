@@ -18,7 +18,7 @@ import javax.servlet.http.HttpServletResponse;
  * Servlet Filter implementation class October
  */
 //@WebFilter({ "/October", "/Ride.do", filterName = "October", urlPatterns = {"/Sis.do"}, initParams = {@WebInitParam(name="sortBy", value="sortBy")}})
-@WebFilter({ "/October", "/Ride.do", "/Sis.do" })
+//@WebFilter({ "/October", "/Ride.do", "/Sis.do" })
 public class October implements Filter {
 
     /**

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" 
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:fmt="http://java.sun.com/jsp/jstl/fmt"
+	version="2.0">
+	<jsp:directive.page contentType="text/html; charset=UTF-8" 
+		pageEncoding="UTF-8" session="false"/>
+	<jsp:output doctype-root-element="html"
+		doctype-public="-//W3C//DTD XHTML 1.0 Transitional//EN"
+		doctype-system="http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"
+		omit-xml-declaration="true" />
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+        <title>ProjD</title>
+</head>
+<body>
+        <h1>Administration</h1>
+        <h2>Welcome</h2>
+       
+
+        <p><a href='Dash.do'>Back to Dashboard</a></p>
+       
+        <form action="Admin.do" method="POST">
+            <input type="radio" name="option" value="droneUsage"/> Times drone service was used<br/>
+              <input type="radio" name="option" value="dronePercent"/> Percentage of drone service use<br/>
+              <input type="radio" name="option" value="drnRidProb"/> likelihood drone and ride cost are both used<br/>
+              <br/>
+             
+              <input type="submit" name="calc" value="submit"/>
+        </form>
+       
+        <c:if test="${!empty result}">
+            <h3 style="color: blue;">${result}</h3>
+        </c:if>
+       
+        <c:if test="${!empty error}">
+            <h3 style="color: red;">${error}</h3>
+        </c:if>
+
+</body>
+</html>
+</jsp:root>
